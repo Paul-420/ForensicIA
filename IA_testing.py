@@ -23,7 +23,7 @@ method = data['method']
 url = data['url']
 query_parameters = '&'.join([f"{k}={v}" for k, v in data['query_parameters'].items()])
 headers = json.dumps(data['headers'])  # Convertir les headers en chaîne JSON
-sql_keywords_detected = int(detect_sql_keywords(query_parameters))
+#sql_keywords_detected = int(detect_sql_keywords(query_parameters))
 
 # Créer un DataFrame avec les nouvelles données
 new_logs = pd.DataFrame({
@@ -31,7 +31,7 @@ new_logs = pd.DataFrame({
     'url': [url],
     'query_parameters': [query_parameters],
     'headers': [headers],
-    'sql_keywords_detected': [sql_keywords_detected]
+    #'sql_keywords_detected': [sql_keywords_detected]
 })
 
 # Transformer les nouvelles données de la même manière que les données d'entraînement
