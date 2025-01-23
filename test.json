@@ -1,0 +1,16 @@
+
+{
+    "method": "GET",
+    "url": "/htmli_get.php",
+    "query_parameters": {
+        "firstname": "<h1>t</h1>",
+        "lastname": "<div>Hello</div>",
+        "address": "<script>alert('XSS')</script>",
+        "email": "<img src=\"x\" onerror=\"alert('XSS')\">"
+    },
+    "form": "submit",
+    "headers": {
+        "Host": "127.0.0.1:8000",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0"
+    }
+}
