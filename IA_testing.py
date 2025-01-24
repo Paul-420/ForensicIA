@@ -9,6 +9,16 @@ model = load('forensic.pkl')
 with open('columns.json', 'r') as f:
     columns = json.load(f)
 
+# Fonction pour détecter les mots-clés SQL
+def detect_sql_keywords(query):
+    sql_keywords = ["SELECT", "INSERT", "UPDATE", "DELETE", "DROP", "UNION", "ALTER", "CREATE", "EXEC", "XP_"]
+    return any(keyword in query.upper() for keyword in sql_keywords)
+
+# Fonction pour détecter les mots-clés HTML
+def detect_html_keywords(query):
+    html_keywords = ["<script>", "<img>", "<div>", "<h1>", "<b>", "<i>", "<span>"]
+    return any(keyword in query.lower() for keyword in html_keywords)
+
 # Lire le fichier JSON
 with open('test.json', 'r') as file:
     data = json.load(file)
@@ -20,13 +30,17 @@ for entry in data:
     method = entry['method']
     url = entry['url']
     query_parameters = '&'.join([f"{k}={v}" for k, v in entry['query_parameters'].items()])
-    headers = entry['headers']['User-Agent']  # Extraire uniquement le User-Agent
+    headers = json.dumps(entry['headers'])  # Convertir les headers en chaîne JSON
+    sql_keywords_detected = int(detect_sql_keywords(query_parameters))
+    html_keywords_detected = int(detect_html_keywords(query_parameters))
     
     new_logs_list.append({
         'method': method,
         'url': url,
         'query_parameters': query_parameters,
-        'headers': headers
+        'headers': headers,
+        'sql_keywords_detected': sql_keywords_detected,
+        'html_keywords_detected': html_keywords_detected
     })
 
 # Créer un DataFrame avec les nouvelles données
