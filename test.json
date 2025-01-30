@@ -1,16 +1,884 @@
 
+[
+    { 
+  "method": "GET", 
+  "url": "/htmli_get.php", 
+  "query_parameters": { 
+    "firstname": "<h1>t</h1>", 
+    "lastname": "<div>Hello</div>", 
+    "address": "<script>alert('XSS')</script>", 
+    "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+    "form": "submit" 
+  }, 
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3Et%3C%2Fh1%3E&lastname=%3Cdiv%3EHello%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  } 
+},
+{ 
+  "method": "GET", 
+  "url": "/htmli_get.php", 
+  "query_parameters": { 
+    "firstname": "<h1>t</h1>", 
+    "lastname": "<div>InjectedContent</div>", 
+    "address": "<script>alert('XSS')</script>", 
+    "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+    "form": "submit" 
+  }, 
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_get.php?lastname=%3Cdiv%3EInjectedContent%3C%2Fdiv%3E", 
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  } 
+},
+{ 
+  "method": "GET", 
+  "url": "/htmli_get.php", 
+  "query_parameters": { 
+    "firstname": "<h1>t</h1>", 
+    "lastname": "<div>Hello</div>", 
+    "address": "<script>alert('XSS')</script>", 
+    "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+    "form": "submit" 
+  }, 
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_get.php?address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E", 
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  } 
+},
+
+{ 
+  "method": "GET", 
+  "url": "/htmli_get.php", 
+  "query_parameters": { 
+    "firstname": "<h1>t</h1>", 
+    "lastname": "<div>Hello</div>", 
+    "address": "<script>alert('XSS')</script>", 
+    "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+    "form": "submit" 
+  }, 
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_get.php?email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E", 
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  } 
+},
+
+{ 
+  "method": "GET", 
+  "url": "/htmli_get.php", 
+  "query_parameters": { 
+    "firstname": "<span>InjectedText</span>", 
+    "lastname": "<div>Hello</div>", 
+    "address": "<script>alert('XSS')</script>", 
+    "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+    "form": "submit" 
+  }, 
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Cspan%3EInjectedText%3C%2Fspan%3E", 
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  } 
+},
+
+{ 
+  "method": "GET", 
+  "url": "/htmli_get.php", 
+  "query_parameters": { 
+    "firstname": "<b>InjectedBoldText</b>", 
+    "lastname": "<div>Hello</div>", 
+    "address": "<script>alert('XSS')</script>", 
+    "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+    "form": "submit" 
+  }, 
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Cb%3EInjectedBoldText%3C%2Fb%3E", 
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  } 
+},
+
+{ 
+  "method": "GET", 
+  "url": "/htmli_get.php", 
+  "query_parameters": { 
+    "firstname": "<i>InjectedItalicText</i>", 
+    "lastname": "<div>Hello</div>", 
+    "address": "<script>alert('XSS')</script>", 
+    "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+    "form": "submit" 
+  }, 
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ci%3EInjectedItalicText%3C%2Fi%3E", 
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  } 
+}, 
+
+{ 
+  "method": "POST", 
+  "url": "/htmli_post.php", 
+  "query_parameters": { 
+    "firstname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.bing.com%2F%22%3EBing%3C%2Fa%3E%3C%2Fh1%3E", 
+    "lastname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.yahoo.com%2F%22%3EYahoo%3C%2Fa%3E%3C%2Fh1%3E", 
+    "form": "submit" 
+  },
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Content-Length": "220", 
+    "Origin": "http://127.0.0.1:8000", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+    "Cookie": "security_level=0; PHPSESSID=abcd1234efgh5678ijkl91011mnop", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  }
+},
+
+
+{ 
+  "method": "POST", 
+  "url": "/htmli_post.php", 
+  "query_parameters": { 
+    "firstname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.reddit.com%2F%22%3EReddit%3C%2Fa%3E%3C%2Fh1%3E", 
+    "lastname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.twitter.com%2F%22%3ETwitter%3C%2Fa%3E%3C%2Fh1%3E", 
+    "form": "submit" 
+  },
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Content-Length": "217", 
+    "Origin": "http://127.0.0.1:8000", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+    "Cookie": "security_level=0; PHPSESSID=5678abcd9101mnop3456qrstu", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  }
+},
+
+ 
+{ 
+  "method": "POST", 
+  "url": "/htmli_post.php", 
+  "query_parameters": { 
+    "firstname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.instagram.com%2F%22%3EInstagram%3C%2Fa%3E%3C%2Fh1%3E", 
+    "lastname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.linkedin.com%2F%22%3ELinkedIn%3C%2Fa%3E%3C%2Fh1%3E", 
+    "form": "submit" 
+  },
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Content-Length": "229", 
+    "Origin": "http://127.0.0.1:8000", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+    "Cookie": "security_level=0; PHPSESSID=9876xyzw54321abcd6789mnop", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  }
+},
+
+
+{ 
+  "method": "POST", 
+  "url": "/htmli_post.php", 
+  "query_parameters": { 
+    "firstname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.youtube.com%2F%22%3EYouTube%3C%2Fa%3E%3C%2Fh1%3E", 
+    "lastname": "%3Ch1%3E%3Ca+href%3D%22https%3A%2F%2Fwww.tumblr.com%2F%22%3ETumblr%3C%2Fa%3E%3C%2Fh1%3E", 
+    "form": "submit" 
+  },
+  "headers": { 
+    "Host": "127.0.0.1:8000", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Content-Length": "218", 
+    "Origin": "http://127.0.0.1:8000", 
+    "Connection": "keep-alive", 
+    "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+    "Cookie": "security_level=0; PHPSESSID=lmno2345pqrst987654zxyc", 
+    "Upgrade-Insecure-Requests": "1", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "same-origin", 
+    "Sec-Fetch-User": "?1" 
+  }
+},
+{ 
+    "method": "GET", 
+    "url": "/htmli_get.php", 
+    "query_parameters": { 
+      "firstname": "<h1>Alice</h1>", 
+      "lastname": "<div>Dupont</div>", 
+      "address": "<script>alert('XSS')</script>", 
+      "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3EAlice%3C%2Fh1%3E&lastname=%3Cdiv%3EDupont%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+      "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+  { 
+    "method": "GET", 
+    "url": "/htmli_get.php", 
+    "query_parameters": { 
+      "firstname": "<h1>Bob</h1>", 
+      "lastname": "<div>Martin</div>", 
+      "address": "<script>alert('XSS')</script>", 
+      "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3EBob%3C%2Fh1%3E&lastname=%3Cdiv%3EMartin%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+      "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+  { 
+    "method": "GET", 
+    "url": "/htmli_get.php", 
+    "query_parameters": { 
+      "firstname": "<h1>Charlie</h1>", 
+      "lastname": "<div>Durand</div>", 
+      "address": "<script>alert('XSS')</script>", 
+      "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3ECharlie%3C%2Fh1%3E&lastname=%3Cdiv%3EDurand%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+      "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+},
+{ 
+    "method": "GET", 
+    "url": "/htmli_get.php", 
+    "query_parameters": { 
+      "firstname": "<h1>David</h1>", 
+      "lastname": "<div>Lemoine</div>", 
+      "address": "<script>alert('XSS')</script>", 
+      "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3EDavid%3C%2Fh1%3E&lastname=%3Cdiv%3ELemoine%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+      "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+  { 
+    "method": "GET", 
+    "url": "/htmli_get.php", 
+    "query_parameters": { 
+      "firstname": "<h1>Eva</h1>", 
+      "lastname": "<div>Bernard</div>", 
+      "address": "<script>alert('XSS')</script>", 
+      "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3EEva%3C%2Fh1%3E&lastname=%3Cdiv%3EBernard%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+      "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+  { 
+    "method": "GET", 
+    "url": "/htmli_get.php", 
+    "query_parameters": { 
+      "firstname": "<h1>Fayza</h1>", 
+      "lastname": "<div>Leroy</div>", 
+      "address": "<script>alert('XSS')</script>", 
+      "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3EFayza%3C%2Fh1%3E&lastname=%3Cdiv%3ELeroy%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+      "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+  { 
+    "method": "GET", 
+    "url": "/htmli_get.php", 
+    "query_parameters": { 
+      "firstname": "<h1>George</h1>", 
+      "lastname": "<div>Moreau</div>", 
+      "address": "<script>alert('XSS')</script>", 
+      "email": "<img src=\"x\" onerror=\"alert('XSS')\">", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_get.php?firstname=%3Ch1%3EGeorge%3C%2Fh1%3E&lastname=%3Cdiv%3EMoreau%3C%2Fdiv%3E&address=%3Cscript%3Ealert('XSS')%3C%2Fscript%3E&email=%3Cimg%20src%3D%22x%22%20onerror%3D%22alert('XSS')%22%3E&form=submit", 
+      "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+},
+
+{ 
+    "method": "POST", 
+    "url": "/htmli_post.php", 
+    "query_parameters": { 
+      "firstname": "Alice", 
+      "lastname": "Dupont", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Content-Type": "application/x-www-form-urlencoded", 
+      "Content-Length": "40", 
+      "Origin": "http://127.0.0.1:8000", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+      "Cookie": "security_level=1; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+{ 
+    "method": "POST", 
+    "url": "/htmli_post.php", 
+    "query_parameters": { 
+      "firstname": "Bob", 
+      "lastname": "Martin", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Content-Type": "application/x-www-form-urlencoded", 
+      "Content-Length": "40", 
+      "Origin": "http://127.0.0.1:8000", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+      "Cookie": "security_level=1; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+{ 
+    "method": "POST", 
+    "url": "/htmli_post.php", 
+    "query_parameters": { 
+      "firstname": "Charlie", 
+      "lastname": "Durand", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Content-Type": "application/x-www-form-urlencoded", 
+      "Content-Length": "40", 
+      "Origin": "http://127.0.0.1:8000", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+      "Cookie": "security_level=1; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+{ 
+    "method": "POST", 
+    "url": "/htmli_post.php", 
+    "query_parameters": { 
+      "firstname": "David", 
+      "lastname": "Lemoine", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Content-Type": "application/x-www-form-urlencoded", 
+      "Content-Length": "40", 
+      "Origin": "http://127.0.0.1:8000", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+      "Cookie": "security_level=1; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+
+{ 
+    "method": "POST", 
+    "url": "/htmli_post.php", 
+    "query_parameters": { 
+      "firstname": "Eva", 
+      "lastname": "Bernard", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Content-Type": "application/x-www-form-urlencoded", 
+      "Content-Length": "40", 
+      "Origin": "http://127.0.0.1:8000", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+      "Cookie": "security_level=1; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+
+{ 
+    "method": "POST", 
+    "url": "/htmli_post.php", 
+    "query_parameters": { 
+      "firstname": "Fayza", 
+      "lastname": "Leroy", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Content-Type": "application/x-www-form-urlencoded", 
+      "Content-Length": "40", 
+      "Origin": "http://127.0.0.1:8000", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+      "Cookie": "security_level=1; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
+
+{ 
+    "method": "POST", 
+    "url": "/htmli_post.php", 
+    "query_parameters": { 
+      "firstname": "George", 
+      "lastname": "Moreau", 
+      "form": "submit" 
+    }, 
+    "headers": { 
+      "Host": "127.0.0.1:8000", 
+      "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0", 
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+      "Accept-Language": "en-US,en;q=0.5", 
+      "Accept-Encoding": "gzip, deflate, br", 
+      "Content-Type": "application/x-www-form-urlencoded", 
+      "Content-Length": "40", 
+      "Origin": "http://127.0.0.1:8000", 
+      "Connection": "keep-alive", 
+      "Referer": "http://127.0.0.1:8000/htmli_post.php", 
+      "Cookie": "security_level=1; PHPSESSID=5oat10nbn3rene9rfj94lc52i7", 
+      "Upgrade-Insecure-Requests": "1", 
+      "Sec-Fetch-Dest": "document", 
+      "Sec-Fetch-Mode": "navigate", 
+      "Sec-Fetch-Site": "same-origin", 
+      "Sec-Fetch-User": "?1" 
+    } 
+  },
+
 {
-    "method": "GET",
-    "url": "/htmli_get.php",
+  "method": "POST",
+  "url": "/htmli_stored.php",
+  "query_parameters": {
+    "entry": "Hello world!",
+    "blog": "submit",
+    "entry_add": ""
+  },
+  "headers": {
+    "Host": "127.0.0.1:8000",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Length": "33",
+    "Origin": "http://127.0.0.1:8000",
+    "Connection": "keep-alive",
+    "Referer": "http://127.0.0.1:8000/htmli_stored.php",
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1"
+  }
+},
+
+
+{
+  "method": "POST",
+  "url": "/htmli_stored.php",
+  "query_parameters": {
+    "entry": "This is a blog entry.",
+    "blog": "submit",
+    "entry_add": ""
+  },
+  "headers": {
+    "Host": "127.0.0.1:8000",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Length": "33",
+    "Origin": "http://127.0.0.1:8000",
+    "Connection": "keep-alive",
+    "Referer": "http://127.0.0.1:8000/htmli_stored.php",
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1"
+  }
+},
+
+
+{
+  "method": "POST",
+  "url": "/htmli_stored.php",
+  "query_parameters": {
+    "entry": "Test entry number 3",
+    "blog": "submit",
+    "entry_add": ""
+  },
+  "headers": {
+    "Host": "127.0.0.1:8000",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Length": "33",
+    "Origin": "http://127.0.0.1:8000",
+    "Connection": "keep-alive",
+    "Referer": "http://127.0.0.1:8000/htmli_stored.php",
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1"
+  }
+},
+
+
+{
+  "method": "POST",
+  "url": "/htmli_stored.php",
+  "query_parameters": {
+    "entry": "Another entry with some content",
+    "blog": "submit",
+    "entry_add": ""
+  },
+  "headers": {
+    "Host": "127.0.0.1:8000",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Length": "33",
+    "Origin": "http://127.0.0.1:8000",
+    "Connection": "keep-alive",
+    "Referer": "http://127.0.0.1:8000/htmli_stored.php",
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1"
+  }
+},
+
+
+{
+  "method": "POST",
+  "url": "/htmli_stored.php",
+  "query_parameters": {
+    "entry": "Final blog entry test",
+    "blog": "submit",
+    "entry_add": ""
+  },
+  "headers": {
+    "Host": "127.0.0.1:8000",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Length": "33",
+    "Origin": "http://127.0.0.1:8000",
+    "Connection": "keep-alive",
+    "Referer": "http://127.0.0.1:8000/htmli_stored.php",
+    "Cookie": "security_level=0; PHPSESSID=5oat10nbn3rene9rfj94lc52i7",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1"
+  }
+},
+{
+    "method": "POST",
+    "url": "/contact",
     "query_parameters": {
-        "firstname": "<h1>t</h1>",
-        "lastname": "<div>Hello</div>",
-        "address": "<script>alert('XSS')</script>",
-        "email": "<img src=\"x\" onerror=\"alert('XSS')\">"
+        "param1": "<img src='x' onerror='alert(\"XSS\")'>",
+        "param2": "' AND 1=1"
     },
-    "form": "submit",
     "headers": {
         "Host": "127.0.0.1:8000",
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0"
-    }
+        "User-Agent": "Mozilla/5.0"
+    },
+    "attack_type": "SQL injection"
+},
+{
+    "method": "POST",
+    "url": "/search",
+    "query_parameters": {
+        "param1": "' OR '1'='1",
+        "param2": "' AND '1'='1"
+    },
+    "headers": {
+        "Host": "127.0.0.1:8000",
+        "User-Agent": "Mozilla/5.0"
+    },
+    "attack_type": "SQL injection"
+},
+{
+    "method": "GET",
+    "url": "/login",
+    "query_parameters": {
+        "param1": "' OR 'a'='a",
+        "param2": "' AND '1'='1"
+    },
+    "headers": {
+        "Host": "127.0.0.1:8000",
+        "User-Agent": "Mozilla/5.0"
+    },
+    "attack_type": "SQL injection"
+},
+{
+    "method": "POST",
+    "url": "/login",
+    "query_parameters": {
+        "param1": "' AND '1'='1",
+        "param2": "<script>alert('XSS')</script>"
+    },
+    "headers": {
+        "Host": "127.0.0.1:8000",
+        "User-Agent": "Mozilla/5.0"
+    },
+    "attack_type": "SQL injection"
 }
+
+] 
