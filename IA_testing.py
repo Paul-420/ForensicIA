@@ -21,7 +21,7 @@ def detect_html_keywords(query):
     return any(keyword in query.lower() for keyword in html_keywords)
 
 # Connexion à la base de données
-conn = sqlite3.connect('logs.db')
+conn = sqlite3.connect('InterfaceWeb/logs.db')
 cursor = conn.cursor()
 
 # Lire les données depuis la base de données
