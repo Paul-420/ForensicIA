@@ -37,7 +37,7 @@
         }
 
         /* Highlight rows with attacks */
-        tr[data-attack-type]:not([data-attack-type="No attacks"]) {
+        tr[data-attack-type]:not([data-attack-type="No attack"]) {
             background-color: #ffe6e6; /* Light red for attack rows */
         }
 
@@ -96,8 +96,8 @@
             const attackTypeB = rowB.cells[5].innerText;
 
 
-            if (attackTypeA === "No attacks") return 1;  // Move "No attacks" to the bottom
-            if (attackTypeB === "No attacks") return -1; // Move "No attacks" to the bottom
+            if (attackTypeA === "No attack") return 1;  // Move "No attacks" to the bottom
+            if (attackTypeB === "No attack") return -1; // Move "No attacks" to the bottom
 
             return attackTypeA.localeCompare(attackTypeB);
         });

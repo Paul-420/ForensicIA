@@ -9,6 +9,7 @@ cursor = conn.cursor()
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS logs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time TEXT DEFAULT CURRENT_TIMESTAMP,
     method TEXT,
     url TEXT,
     query_parameters TEXT,
@@ -27,7 +28,7 @@ with open('test2.json', 'r') as file:
 
 # Insérer les données dans la base de données
 for entry in data:
-    #time = entry['time']
+    time = entry['time']
     method = entry['method']
     url = entry['url']
     if method == "GET":
@@ -41,9 +42,9 @@ for entry in data:
     attack_type = entry.get('attack_type', 'Not predicted')  # Utiliser 'Not predicted' par défaut si 'attack_type' n'est pas présent
 
     cursor.execute('''
-    INSERT INTO logs (method, url, query_parameters, headers, body, attack_type)
-    VALUES (?, ?, ?, ?, ?, ?)
-    ''', (method, url, query_parameters, headers, body, attack_type))
+    INSERT INTO logs (time, method, url, query_parameters, headers, body, attack_type)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+    ''', (time, method, url, query_parameters, headers, body, attack_type))
 
 # Sauvegarder les modifications et fermer la connexion
 conn.commit()
