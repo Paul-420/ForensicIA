@@ -27,6 +27,7 @@ with open('test2.json', 'r') as file:
 
 # Insérer les données dans la base de données
 for entry in data:
+    #time = entry['time']
     method = entry['method']
     url = entry['url']
     if method == "GET":

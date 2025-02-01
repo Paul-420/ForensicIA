@@ -31,14 +31,14 @@ conn = sqlite3.connect('InterfaceWeb/logs.db')
 cursor = conn.cursor()
 
 # Lire les données depuis la base de données
-cursor.execute("SELECT id, method, url, query_parameters, headers FROM logs")
+cursor.execute("SELECT id, method, url, query_parameters, headers, body FROM logs")
 rows = cursor.fetchall()
 
 # Préparer les nouvelles données
 new_logs_list = []
 
 for row in rows:
-    id, method, url, query_parameters, headers = row
+    id, method, url, query_parameters, headers, body = row
     query_parameters = json.loads(query_parameters)  # Convertir les paramètres de requête en dict
     headers = json.loads(headers)  # Convertir les en-têtes en dict
     query_parameters_values = extract_values(query_parameters)  # Extraire les valeurs des paramètres de requête
@@ -51,7 +51,8 @@ for row in rows:
         'url': url,
         'query_parameters_values': query_parameters_values,
         'sql_keywords_detected': sql_keywords_detected,
-        'html_keywords_detected': html_keywords_detected
+        'html_keywords_detected': html_keywords_detected,
+        'body': body
     })
 
 # Créer un DataFrame avec les nouvelles données
@@ -64,8 +65,15 @@ new_logs.loc[:, 'html_keywords_detected'] = new_logs['html_keywords_detected'].a
 # Conserver la colonne 'id' avant de transformer les données
 ids = new_logs['id']
 
+# Vérifier si la colonne 'body' existe avant de la supprimer et de l'encoder
+columns_to_drop = ['id']
+columns_to_encode = ['method', 'url', 'query_parameters_values']
+
+if 'body' in new_logs.columns:
+    columns_to_encode.append('body')
+
 # Transformer les nouvelles données de la même manière que les données d'entraînement
-new_logs_transformed = pd.get_dummies(new_logs.drop(columns=['id']), columns=['method', 'url', 'query_parameters_values'])
+new_logs_transformed = pd.get_dummies(new_logs.drop(columns=columns_to_drop), columns=columns_to_encode)
 
 # Aligner les colonnes des nouvelles données avec celles des données d'entraînement
 new_logs_transformed = new_logs_transformed.reindex(columns=columns, fill_value=0)
