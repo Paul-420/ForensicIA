@@ -20,6 +20,21 @@ def detect_html_keywords(query):
     html_keywords = ["<script>", "<img>", "<div>", "<h1>", "<b>", "<i>", "<span>"]
     return any(keyword in query.lower() for keyword in html_keywords)
 
+def detect_command_keywords(query):
+    command_keywords = [
+        "cat", "rm", "ls", "cp", "mv", "chmod", "chown", "mkdir", "rmdir", "touch", "echo",
+        "grep", "find", "tar", "zip", "unzip", "wget", "curl", "scp", "ssh", "-rf", "df", "-h", "whoami",
+        "pwd", "tree", "du", "stat",
+        "ps", "kill", "pkill", "top", "htop", "nice", "renice",
+        "ping", "netstat", "ifconfig", "ip", "traceroute", "nslookup", "dig", "telnet", "nmap",
+        "useradd", "usermod", "userdel", "passwd", "groupadd", "groups",
+        "gzip", "bzip2", "xz", "7z", "rar",
+        "tee", "xargs", "awk", "sed", "cut", "sort", "uniq",
+        "uptime", "history", "alias", "unalias", "env", "export", "source", "time",
+        ";", "|", "&", "`", "$(", "<", ">", "||", "&&"
+    ]
+    return any(keyword in query.lower() for keyword in command_keywords)
+
 # Extraire les valeurs des query_parameters
 def extract_values(query_parameters):
     if isinstance(query_parameters, dict):
@@ -44,7 +59,8 @@ for row in rows:
     query_parameters_values = extract_values(query_parameters)  # Extraire les valeurs des paramètres de requête
     sql_keywords_detected = int(detect_sql_keywords(query_parameters_values))
     html_keywords_detected = int(detect_html_keywords(query_parameters_values))
-    
+    command_keywords_detected = int(detect_command_keywords(query_parameters_values))
+
     new_logs_list.append({
         'id': id,
         'method': method,
@@ -52,6 +68,7 @@ for row in rows:
         'query_parameters_values': query_parameters_values,
         'sql_keywords_detected': sql_keywords_detected,
         'html_keywords_detected': html_keywords_detected,
+        'command_keywords_detected': command_keywords_detected,
         'body': body
     })
 
@@ -61,6 +78,7 @@ new_logs = pd.DataFrame(new_logs_list)
 # Convertir les colonnes booléennes en entiers
 new_logs.loc[:, 'sql_keywords_detected'] = new_logs['sql_keywords_detected'].astype(int)
 new_logs.loc[:, 'html_keywords_detected'] = new_logs['html_keywords_detected'].astype(int)
+new_logs.loc[:, 'command_keywords_detected'] = new_logs['command_keywords_detected'].astype(int)
 
 # Conserver la colonne 'id' avant de transformer les données
 ids = new_logs['id']
