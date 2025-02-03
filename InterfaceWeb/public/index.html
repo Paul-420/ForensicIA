@@ -45,6 +45,7 @@
 </head>
 <body>
 <h1>Logs</h1>
+<button id="clear-database">Clear Database</button>
 <table id="logs-table">
     <thead>
     <tr>
@@ -67,6 +68,7 @@
             const logs = await response.json();
 
             const tableBody = document.querySelector('#logs-table tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
 
             logs.forEach(log => {
                 const row = document.createElement('tr');
@@ -95,7 +97,6 @@
             const attackTypeA = rowA.cells[5].innerText; // Assuming attack type is in the 6th column (index 5)
             const attackTypeB = rowB.cells[5].innerText;
 
-
             if (attackTypeA === "No attack") return 1;  // Move "No attacks" to the bottom
             if (attackTypeB === "No attack") return -1; // Move "No attacks" to the bottom
 
@@ -108,6 +109,25 @@
         sortedRows.forEach(row => tbody.appendChild(row));
     });
 
+    // Function to clear the database 
+    async function clearDatabase() {
+        try {
+            const response = await fetch('http://localhost:5000/clear_database', {
+                method: 'POST'
+            });
+            if (response.ok) {
+                alert('Database cleared successfully');
+                fetchLogs(); // Refresh the logs display
+            } else {
+                alert('Failed to clear the database');
+            }
+        } catch (error) {
+            console.error('Error clearing database:', error);
+        }
+    }
+
+    // Add event listener to the clear database button
+    document.getElementById('clear-database').addEventListener('click', clearDatabase);
 
     // Call the fetchLogs function when the page loads
     window.onload = fetchLogs;
