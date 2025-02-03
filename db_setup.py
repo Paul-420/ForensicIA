@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS logs (
 conn.commit()
 
 # Lire le fichier JSON
-with open('test2.json', 'r') as file:
+with open('/var/www/html/DVWA/logs/requests.json', 'r') as file:
     data = json.load(file)
 
 # Insérer les données dans la base de données
