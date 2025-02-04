@@ -69,6 +69,20 @@
 </table>
 
 <script>
+    // Function to escape HTML
+    function escapeHTML(str) {
+        return str.replace(/[&<>"']/g, function(match) {
+            const escapeMap = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            };
+            return escapeMap[match];
+        });
+    }
+
     // Function to fetch logs from the backend
     async function fetchLogs() {
         try {
@@ -84,11 +98,11 @@
                 row.setAttribute("data-attack-type", log.attack_type); // Set attack type as a data attribute
 
                 row.innerHTML = `
-            <td>${log.id}</td>
-            <td>${log.method}</td>
-            <td>${log.url}</td>
-            <td>${log.query_parameters}</td>
-            <td>${log.attack_type}</td>
+            <td>${escapeHTML(log.id.toString())}</td>
+            <td>${escapeHTML(log.method)}</td>
+            <td>${escapeHTML(log.url)}</td>
+            <td>${escapeHTML(log.query_parameters)}</td>
+            <td>${escapeHTML(log.attack_type)}</td>
             <td><button class="show-details">Show Details</button></td>
           `;
 
@@ -96,7 +110,7 @@
                 detailsRow.classList.add('details');
                 detailsRow.innerHTML = `
             <td colspan="6">
-                <strong>Headers:</strong> ${log.headers}
+                <strong>Headers:</strong> ${escapeHTML(log.headers)}
             </td>
           `;
 
